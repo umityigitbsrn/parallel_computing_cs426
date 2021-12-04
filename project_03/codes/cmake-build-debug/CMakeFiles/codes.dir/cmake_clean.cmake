@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/codes.dir/main.c.o"
+  "CMakeFiles/codes.dir/src/kdtree_serial.c.o"
+  "CMakeFiles/codes.dir/src/util.c.o"
   "codes"
   "codes.pdb"
 )

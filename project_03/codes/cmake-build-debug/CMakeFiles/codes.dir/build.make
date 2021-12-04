@@ -66,30 +66,45 @@ include CMakeFiles/codes.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/codes.dir/flags.make
 
-CMakeFiles/codes.dir/main.c.o: CMakeFiles/codes.dir/flags.make
-CMakeFiles/codes.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/codes.dir/main.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/codes.dir/main.c.o -c "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/main.c"
+CMakeFiles/codes.dir/src/util.c.o: CMakeFiles/codes.dir/flags.make
+CMakeFiles/codes.dir/src/util.c.o: ../src/util.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/codes.dir/src/util.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/codes.dir/src/util.c.o -c "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/src/util.c"
 
-CMakeFiles/codes.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/codes.dir/main.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/main.c" > CMakeFiles/codes.dir/main.c.i
+CMakeFiles/codes.dir/src/util.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/codes.dir/src/util.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/src/util.c" > CMakeFiles/codes.dir/src/util.c.i
 
-CMakeFiles/codes.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/codes.dir/main.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/main.c" -o CMakeFiles/codes.dir/main.c.s
+CMakeFiles/codes.dir/src/util.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/codes.dir/src/util.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/src/util.c" -o CMakeFiles/codes.dir/src/util.c.s
+
+CMakeFiles/codes.dir/src/kdtree_serial.c.o: CMakeFiles/codes.dir/flags.make
+CMakeFiles/codes.dir/src/kdtree_serial.c.o: ../src/kdtree_serial.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/codes.dir/src/kdtree_serial.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/codes.dir/src/kdtree_serial.c.o -c "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/src/kdtree_serial.c"
+
+CMakeFiles/codes.dir/src/kdtree_serial.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/codes.dir/src/kdtree_serial.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/src/kdtree_serial.c" > CMakeFiles/codes.dir/src/kdtree_serial.c.i
+
+CMakeFiles/codes.dir/src/kdtree_serial.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/codes.dir/src/kdtree_serial.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/src/kdtree_serial.c" -o CMakeFiles/codes.dir/src/kdtree_serial.c.s
 
 # Object files for target codes
 codes_OBJECTS = \
-"CMakeFiles/codes.dir/main.c.o"
+"CMakeFiles/codes.dir/src/util.c.o" \
+"CMakeFiles/codes.dir/src/kdtree_serial.c.o"
 
 # External object files for target codes
 codes_EXTERNAL_OBJECTS =
 
-codes: CMakeFiles/codes.dir/main.c.o
+codes: CMakeFiles/codes.dir/src/util.c.o
+codes: CMakeFiles/codes.dir/src/kdtree_serial.c.o
 codes: CMakeFiles/codes.dir/build.make
 codes: CMakeFiles/codes.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable codes"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable codes"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/codes.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

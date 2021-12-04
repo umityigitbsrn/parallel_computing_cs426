@@ -129,29 +129,53 @@ codes/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/codes.dir/build.make CMakeFiles/codes.dir/build
 .PHONY : codes/fast
 
-main.o: main.c.o
-.PHONY : main.o
+src/kdtree_serial.o: src/kdtree_serial.c.o
+.PHONY : src/kdtree_serial.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/codes.dir/build.make CMakeFiles/codes.dir/main.c.o
-.PHONY : main.c.o
+src/kdtree_serial.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/codes.dir/build.make CMakeFiles/codes.dir/src/kdtree_serial.c.o
+.PHONY : src/kdtree_serial.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+src/kdtree_serial.i: src/kdtree_serial.c.i
+.PHONY : src/kdtree_serial.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/codes.dir/build.make CMakeFiles/codes.dir/main.c.i
-.PHONY : main.c.i
+src/kdtree_serial.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/codes.dir/build.make CMakeFiles/codes.dir/src/kdtree_serial.c.i
+.PHONY : src/kdtree_serial.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+src/kdtree_serial.s: src/kdtree_serial.c.s
+.PHONY : src/kdtree_serial.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/codes.dir/build.make CMakeFiles/codes.dir/main.c.s
-.PHONY : main.c.s
+src/kdtree_serial.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/codes.dir/build.make CMakeFiles/codes.dir/src/kdtree_serial.c.s
+.PHONY : src/kdtree_serial.c.s
+
+src/util.o: src/util.c.o
+.PHONY : src/util.o
+
+# target to build an object file
+src/util.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/codes.dir/build.make CMakeFiles/codes.dir/src/util.c.o
+.PHONY : src/util.c.o
+
+src/util.i: src/util.c.i
+.PHONY : src/util.i
+
+# target to preprocess a source file
+src/util.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/codes.dir/build.make CMakeFiles/codes.dir/src/util.c.i
+.PHONY : src/util.c.i
+
+src/util.s: src/util.c.s
+.PHONY : src/util.s
+
+# target to generate assembly for a file
+src/util.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/codes.dir/build.make CMakeFiles/codes.dir/src/util.c.s
+.PHONY : src/util.c.s
 
 # Help Target
 help:
@@ -162,9 +186,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... codes"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/kdtree_serial.o"
+	@echo "... src/kdtree_serial.i"
+	@echo "... src/kdtree_serial.s"
+	@echo "... src/util.o"
+	@echo "... src/util.i"
+	@echo "... src/util.s"
 .PHONY : help
 
 

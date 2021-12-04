@@ -1,7 +1,4 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes"
 -- Configuring done
-CMake Error at CMakeLists.txt:6 (add_executable):
-  No SOURCES given to target: codes
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Generating done
+-- Build files have been written to: /Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug

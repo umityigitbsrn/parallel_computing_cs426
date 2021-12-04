@@ -76,7 +76,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/main.c">
+		<Unit filename="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/src/kdtree_serial.c">
+			<Option target="codes"/>
+		</Unit>
+		<Unit filename="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/src/util.c">
+			<Option target="codes"/>
+		</Unit>
+		<Unit filename="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/src/util.h">
 			<Option target="codes"/>
 		</Unit>
 		<Unit filename="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/CMakeLists.txt">

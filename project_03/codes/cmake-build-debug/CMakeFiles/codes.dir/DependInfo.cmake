@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/main.c" "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/CMakeFiles/codes.dir/main.c.o"
+  "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/src/kdtree_serial.c" "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/CMakeFiles/codes.dir/src/kdtree_serial.c.o"
+  "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/src/util.c" "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/CMakeFiles/codes.dir/src/util.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
