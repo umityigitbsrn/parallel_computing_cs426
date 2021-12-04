@@ -222,7 +222,7 @@ Point select_median_point(Point *arr, unsigned long init, unsigned long n, int d
     int a;
     l = init;
     ir = n - 1;
-    k = n / 2;
+    k = (n + init) / 2;
     for (;;) {
         if (ir <= l + 1) {
             if (ir == l + 1 && arr[ir][dimension] < arr[l][dimension]) {
@@ -267,13 +267,17 @@ Point select_median_point(Point *arr, unsigned long init, unsigned long n, int d
 }
 
 Node *kd_tree_construct(Point *points, unsigned long init, unsigned long n, int dimension, int k){
+    printf("init: %u, n: %u, dimension: %d, k: %d\n");
+    if (init >= n)
+	return NULL;
     Node *N = newNode(select_median_point(points, init, n, k));
     printPoint(N->data, dimension);
+    printf("\n");
     if (init + 1 == n)
         return N;
 
     k = (k + 1) % dimension;
-    N->left = kd_tree_construct(points, init, n / 2 - 1, dimension, k);
-    N->right = kd_tree_construct(points, n / 2 + 1, n, dimension, k);
+    N->left = kd_tree_construct(points, init, (n + init) / 2, dimension, k);
+    N->right = kd_tree_construct(points, ((n + init) / 2) + 1, n, dimension, k);
     return N;
 }
