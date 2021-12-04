@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="codes"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="codes">
+				<Option output="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/codes" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 codes"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="codes/fast">
+				<Option output="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/codes" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 codes/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/umityigitbsrn/Desktop/Bilkent\ 21-22\ Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/main.c">
+			<Option target="codes"/>
+		</Unit>
+		<Unit filename="/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
