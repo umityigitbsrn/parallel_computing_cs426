@@ -109,7 +109,7 @@ void write_results(char *fileName, Result *results, int numQueries, int dimensio
             // fprintf(inputFile,"\n");
 
             //Printing only the results size
-            fprintf(inputFile, "%d\n", results[i].size);
+            fprintf(inputFile, "%d\n", results[i]);
         }
     } else {
         printf("Could not open the file!\n");
@@ -267,12 +267,12 @@ Point select_median_point(Point *arr, unsigned long init, unsigned long n, int d
 }
 
 Node *kd_tree_construct(Point *points, unsigned long init, unsigned long n, int dimension, int k){
-    printf("init: %u, n: %u, dimension: %d, k: %d\n");
+//    printf("init: %u, n: %u, dimension: %d, k: %d\n");
     if (init >= n)
 	return NULL;
     Node *N = newNode(select_median_point(points, init, n, k));
-    printPoint(N->data, dimension);
-    printf("\n");
+//    printPoint(N->data, dimension);
+//    printf("\n");
     if (init + 1 == n)
         return N;
 
@@ -280,4 +280,38 @@ Node *kd_tree_construct(Point *points, unsigned long init, unsigned long n, int 
     N->left = kd_tree_construct(points, init, (n + init) / 2, dimension, k);
     N->right = kd_tree_construct(points, ((n + init) / 2) + 1, n, dimension, k);
     return N;
+}
+
+void range_search(Node *node, int dimension, int k, Range range, Result *result){
+    if (node != NULL){
+        int i;
+        char dimension_flag = 1;
+        for (i = 0; i < dimension && dimension_flag; ++i)
+            dimension_flag = (char) (node->data[i] >= range.leftPoint[i] && node->data[i] <= range.rightPoint[i]);
+
+        if (dimension_flag)
+            *result = *result + 1;
+
+        int k_next = (k + 1) % dimension;
+
+        if (node->data[k] >= range.leftPoint[k])
+            range_search(node->left, dimension, k_next, range, result);
+
+        if (node->data[k] <= range.rightPoint[k])
+            range_search(node->right, dimension, k_next, range, result);
+    }
+}
+
+void free_kd_tree(Node *root){
+    if (root->left != NULL) {
+        free_kd_tree(root->left);
+        root->left = NULL;
+    }
+
+    if (root->right != NULL) {
+        free_kd_tree(root->right);
+        root->right = NULL;
+    }
+
+    free(root);
 }

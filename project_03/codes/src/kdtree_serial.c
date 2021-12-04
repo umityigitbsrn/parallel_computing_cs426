@@ -56,36 +56,25 @@ int main(int argc, char **argv) {
     printf("Printing the tree..\n");
     printTree(root, dimension);
 
+
+    Result *results = malloc(numQueries * sizeof(Result));
+    for (i = 0; i < numQueries; ++i)
+        results[i] = 0;
+
+    /////////////////////////////////////////////////
+    ///////         Search Query Ranges  ////////////
+    /////////////////////////////////////////////////
+    for (i = 0; i < numQueries; ++i)
+        range_search(root, dimension, 0, queries[i], &results[i]);
+
+    printf("Results:\n");
+    for (i = 0; i < numQueries; ++i)
+        printf("%d\n", results[i]);
+
+    write_results(argv[3], results, numQueries, dimension);
+    free_kd_tree(root);
     free(points);
     free(queries);
+    free(results);
     return 0;
-
-//    Result *results = malloc(numQueries * sizeof(Result));
-//
-//    /////////////////////////////////////////////////
-//    ///////         Search Query Ranges  ////////////
-//    /////////////////////////////////////////////////
-//
-//    for (int i = 0; i < numQueries; i++) {
-//        results[i].size = i; //Some fake values
-//    }
-//
-//    printf("Results:\n");
-//
-//    for (int i = 0; i < numQueries; i++) {
-//        printf("%d:", results[i].size);
-//        for (int j = 0; j < results[i].size; j++) {
-//            //printPoint(results[i].resultPoints[j],dimension); //YOU DON'T NEED TO COMPUTE THE POINTS
-//            printf(" ");
-//        }
-//        printf("\n");
-//    }
-//
-//    write_results(argv[3], results, numQueries, dimension);
-//
-//
-//    free(points); //points should be deleted after we process the queries, kd-tree nodes points to elements in the points array
-//
-//
-//    return 0;
 }

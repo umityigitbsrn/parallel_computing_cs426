@@ -20,11 +20,14 @@ typedef struct Range {
     Point rightPoint;
 } Range;
 
-struct Result; /* Forward declaration */
-typedef struct Result {
-    Point *resultPoints;
-    int size;
-} Result;
+typedef int Result;
+//struct Result; /* Forward declaration */
+//typedef struct Result {
+//    Point *resultPoints;
+//    int size;
+//} Result;
+
+
 
 int read_points_file(char *file_name, int *numPoints, int *dimension, Point **points);
 
@@ -52,7 +55,9 @@ Node *newNode(Point data);
 
 void printTree(Node *root, int dimension);
 
-Point select_median_point(Point *arr, unsigned long init, unsigned long n, int dimension);
 Node *kd_tree_construct(Point *points, unsigned long init, unsigned long n, int dimension, int k);
 
+void range_search(Node *node, int dimension, int k, Range range, Result *result);
+
+void free_kd_tree(Node *root);
 #endif /* UTIL_H_ */
