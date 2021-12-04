@@ -57,7 +57,7 @@ int main(int argc, char **argv) {
     printTree(root, dimension);
 
 
-    Result *results = malloc(numQueries * sizeof(Result));
+    Result *results = (Result *) malloc(numQueries * sizeof(Result));
     for (i = 0; i < numQueries; ++i)
         results[i] = 0;
 
