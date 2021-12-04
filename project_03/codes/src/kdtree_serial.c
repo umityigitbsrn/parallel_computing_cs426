@@ -32,12 +32,13 @@ int main(int argc, char **argv) {
         return -1;
     }
 
-    for (size_t i = 0; i < numPoints; i++) {
+    int i;
+    for (i = 0; i < numPoints; i++) {
         printPoint(points[i], dimension);
         printf("\n");
     }
     printf("Queries are:\n");
-    for (int i = 0; i < numQueries; i++) {
+    for (i = 0; i < numQueries; i++) {
         printf("Query %d, from ", i);
         printPoint(queries[i].leftPoint, dimension);
         printf(" to ");
@@ -59,32 +60,32 @@ int main(int argc, char **argv) {
     free(queries);
     return 0;
 
-    Result *results = malloc(numQueries * sizeof(Result));
-
-    /////////////////////////////////////////////////
-    ///////         Search Query Ranges  ////////////
-    /////////////////////////////////////////////////
-
-    for (int i = 0; i < numQueries; i++) {
-        results[i].size = i; //Some fake values
-    }
-
-    printf("Results:\n");
-
-    for (int i = 0; i < numQueries; i++) {
-        printf("%d:", results[i].size);
-        for (int j = 0; j < results[i].size; j++) {
-            //printPoint(results[i].resultPoints[j],dimension); //YOU DON'T NEED TO COMPUTE THE POINTS
-            printf(" ");
-        }
-        printf("\n");
-    }
-
-    write_results(argv[3], results, numQueries, dimension);
-
-
-    free(points); //points should be deleted after we process the queries, kd-tree nodes points to elements in the points array
-
-
-    return 0;
+//    Result *results = malloc(numQueries * sizeof(Result));
+//
+//    /////////////////////////////////////////////////
+//    ///////         Search Query Ranges  ////////////
+//    /////////////////////////////////////////////////
+//
+//    for (int i = 0; i < numQueries; i++) {
+//        results[i].size = i; //Some fake values
+//    }
+//
+//    printf("Results:\n");
+//
+//    for (int i = 0; i < numQueries; i++) {
+//        printf("%d:", results[i].size);
+//        for (int j = 0; j < results[i].size; j++) {
+//            //printPoint(results[i].resultPoints[j],dimension); //YOU DON'T NEED TO COMPUTE THE POINTS
+//            printf(" ");
+//        }
+//        printf("\n");
+//    }
+//
+//    write_results(argv[3], results, numQueries, dimension);
+//
+//
+//    free(points); //points should be deleted after we process the queries, kd-tree nodes points to elements in the points array
+//
+//
+//    return 0;
 }
