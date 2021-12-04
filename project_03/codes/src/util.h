@@ -52,7 +52,7 @@ Node *newNode(Point data);
 
 void printTree(Node *root, int dimension);
 
-Point select(Point *arr, unsigned long init, unsigned long n, int dimension);
+Point select_median_point(Point *arr, unsigned long init, unsigned long n, int dimension);
 Node *kd_tree_construct(Point *points, unsigned long init, unsigned long n, int dimension, int k);
 
 #endif /* UTIL_H_ */

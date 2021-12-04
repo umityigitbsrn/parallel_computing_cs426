@@ -28,8 +28,9 @@ int read_points_file(char *file_name, int *numPoints, int *dimension, Point **po
 
         *points = newPoints(*numPoints, *dimension);
 
-        for (int i = 0; i < *numPoints; i++) {
-            for (int j = 0; j < *dimension; j++) {
+        int i, j;
+        for (i = 0; i < *numPoints; i++) {
+            for (j = 0; j < *dimension; j++) {
                 success = fscanf(inputFile, "%d", &((*points)[i][j]));
                 if (success == EOF || success == 0) {
                     printf("Bad File format!\n");
@@ -69,15 +70,16 @@ int read_queries_file(char *file_name, int *numQueries, int *dimension, Range **
 
         *queries = newQueries(*numQueries, *dimension);
 
-        for (int i = 0; i < *numQueries; i++) {
-            for (int j = 0; j < *dimension; j++) {
+        int i,j;
+        for (i = 0; i < *numQueries; i++) {
+            for (j = 0; j < *dimension; j++) {
                 success = fscanf(inputFile, "%d", &((*queries)[i].leftPoint[j]));
                 if (success == EOF || success == 0) {
                     printf("Bad File format!\n");
                     return 0;
                 }
             }
-            for (int j = 0; j < *dimension; j++) {
+            for (j = 0; j < *dimension; j++) {
                 success = fscanf(inputFile, "%d", &((*queries)[i].rightPoint[j]));
                 if (success == EOF || success == 0) {
                     printf("Bad File format!\n");
@@ -96,7 +98,8 @@ void write_results(char *fileName, Result *results, int numQueries, int dimensio
     FILE *inputFile = fopen(fileName, "w");
     if (inputFile) {
         //Output the final values
-        for (int i = 0; i < numQueries; i++) {
+        int i;
+        for (i = 0; i < numQueries; i++) {
             // fprintf(inputFile,"%d:", results[i].size);
             // for (int j = 0; j < results[i].size; j++)
             // {
@@ -122,7 +125,8 @@ Range *newQueries(int numQueries, int dimension) {
     ptr = (Point) (ranges + numQueries);
 
     // for loop to point rows pointer to appropriate location in 2D array
-    for (int i = 0; i < numQueries; i++) {
+    int i;
+    for (i = 0; i < numQueries; i++) {
         ranges[i].leftPoint = (ptr + 2 * dimension * i);
         ranges[i].rightPoint = (ptr + 2 * dimension * i + dimension);
     }
@@ -132,7 +136,8 @@ Range *newQueries(int numQueries, int dimension) {
 
 void printPoint(Point point, int dimension) {
     printf("(");
-    for (size_t i = 0; i < dimension - 1; i++) {
+    size_t i;
+    for (i = 0; i < dimension - 1; i++) {
         printf("%d,", point[i]);
     }
     printf("%d)", point[dimension - 1]);
@@ -140,7 +145,8 @@ void printPoint(Point point, int dimension) {
 
 void fprintPoint(FILE *__restrict__ inputFile, Point point, int dimension) {
     fprintf(inputFile, "(");
-    for (size_t i = 0; i < dimension - 1; i++) {
+    size_t i;
+    for (i = 0; i < dimension - 1; i++) {
         fprintf(inputFile, "%d,", point[i]);
     }
     fprintf(inputFile, "%d)", point[dimension - 1]);
@@ -155,7 +161,8 @@ Point *newPoints(int numPoints, int dimension) {
     ptr = (Point) (points + numPoints);
 
     // for loop to point rows pointer to appropriate location in 2D array
-    for (int i = 0; i < numPoints; i++) {
+    int i;
+    for (i = 0; i < numPoints; i++) {
         points[i] = (ptr + dimension * i);
     }
     return points;
@@ -180,7 +187,8 @@ Node *newNode(Point data) {
 
 void _printTree(Node *root, int dimension, int *_level) {
     printf("|");
-    for (int ix = 0; ix < *_level; ++ix) {
+    int ix;
+    for (ix = 0; ix < *_level; ++ix) {
         printf("----");
     }
     printPoint(root->data, dimension);
@@ -208,7 +216,7 @@ void swap_pointers(int **a, int **b){
 }
 
 // TODO: reference
-Point select(Point *arr, unsigned long init, unsigned long n, int dimension) {
+Point select_median_point(Point *arr, unsigned long init, unsigned long n, int dimension) {
     unsigned long i, ir, j, l, mid, k;
 
     int a;
@@ -259,7 +267,7 @@ Point select(Point *arr, unsigned long init, unsigned long n, int dimension) {
 }
 
 Node *kd_tree_construct(Point *points, unsigned long init, unsigned long n, int dimension, int k){
-    Node *N = newNode(select(points, init, n, k));
+    Node *N = newNode(select_median_point(points, init, n, k));
     printPoint(N->data, dimension);
     if (init + 1 == n)
         return N;
