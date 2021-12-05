@@ -60,4 +60,6 @@ Node *kd_tree_construct(Point *points, unsigned long init, unsigned long n, int 
 void range_search(Node *node, int dimension, int k, Range range, Result *result);
 
 void free_kd_tree(Node *root);
+
+Node *kd_tree_construct_parallel(Point *points, unsigned long init, unsigned long n, int dimension, int k);
 #endif /* UTIL_H_ */

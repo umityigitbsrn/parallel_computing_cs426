@@ -269,7 +269,7 @@ Point select_median_point(Point *arr, unsigned long init, unsigned long n, int d
 Node *kd_tree_construct(Point *points, unsigned long init, unsigned long n, int dimension, int k){
 //    printf("init: %u, n: %u, dimension: %d, k: %d\n");
     if (init >= n)
-	return NULL;
+	    return NULL;
     Node *N = newNode(select_median_point(points, init, n, k));
 //    printPoint(N->data, dimension);
 //    printf("\n");
@@ -314,4 +314,27 @@ void free_kd_tree(Node *root){
     }
 
     free(root);
+}
+
+Node *kd_tree_construct_parallel(Point *points, unsigned long init, unsigned long n, int dimension, int k){
+//    printf("init: %u, n: %u, dimension: %d, k: %d\n");
+    if (init >= n)
+	    return NULL;
+    Node *N = newNode(select_median_point(points, init, n, k));
+//    printPoint(N->data, dimension);
+//    printf("\n");
+    if (init + 1 == n)
+        return N;
+
+    k = (k + 1) % dimension;
+    
+    #pragma omp task shared(N, points, dimension) firstprivate(k, init, n)
+    N->left = kd_tree_construct(points, init, (n + init) / 2, dimension, k);
+    
+    #pragma omp task shared(N, points, dimension) firstprivate(k, init, n)
+    N->right = kd_tree_construct(points, ((n + init) / 2) + 1, n, dimension, k);
+
+    #pragma omp taskwait
+
+    return N;
 }
