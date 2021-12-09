@@ -1,4 +1,4 @@
-all: kdtree_serial kdtree_perf
+all: kdtree_serial kdtree_perf kdtree_parallel
 
 kdtree_perf: util.o src/kdtree_serial.c
 	gcc -fno-omit-frame-pointer -o kdtree_perf src/kdtree_serial.c util.o
@@ -9,6 +9,9 @@ kdtree_serial: util.o src/kdtree_serial.c
 util.o: src/util.c src/util.h
 	gcc -g -c src/util.c
 
+kdtree_parallel: util.o src/kdtree_parallel.c
+	gcc -g -o kdtree_parallel src/kdtree_parallel.c util.o -fopenmp
+
 .PHONY: clean
 clean:
-	rm util.o kdtree_serial kdtree_perf
+	rm util.o kdtree_serial kdtree_perf kdtree_parallel
