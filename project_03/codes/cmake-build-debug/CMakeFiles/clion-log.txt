@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" "/Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes"
+/home/umityigitbsrn/clion-2021.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/umityigitbsrn/Desktop/parallel/parallel_computing_cs426/project_03/codes
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/umityigitbsrn/Desktop/Bilkent 21-22 Fall/CS426-Parallel/projects/parallel_computing_cs426/project_03/codes/cmake-build-debug
+-- Build files have been written to: /home/umityigitbsrn/Desktop/parallel/parallel_computing_cs426/project_03/codes/cmake-build-debug

@@ -8,6 +8,7 @@
 #include "util.h"
 
 #include <stdlib.h>
+#include "omp.h"
 
 int read_points_file(char *file_name, int *numPoints, int *dimension, Point **points) {
     printf("Reading the file...\n");
@@ -316,25 +317,52 @@ void free_kd_tree(Node *root){
     free(root);
 }
 
-Node *kd_tree_construct_parallel(Point *points, unsigned long init, unsigned long n, int dimension, int k){
-//    printf("init: %u, n: %u, dimension: %d, k: %d\n");
-    if (init >= n)
-	    return NULL;
-    Node *N = newNode(select_median_point(points, init, n, k));
-//    printPoint(N->data, dimension);
-//    printf("\n");
-    if (init + 1 == n)
-        return N;
+//Node *kd_tree_construct_parallel(Point *points, unsigned long init, unsigned long n, int dimension, int k){
+////    printf("init: %u, n: %u, dimension: %d, k: %d\n");
+//    printf("thread %d/%d construct tree btw init: %lu, n: %lu\n", omp_get_thread_num(), omp_get_num_threads(), init, n);
+//    if (init >= n)
+//	    return NULL;
+//    Node *N = newNode(select_median_point(points, init, n, k));
+////    printPoint(N->data, dimension);
+////    printf("\n");
+//    if (init + 1 == n)
+//        return N;
+//
+//    k = (k + 1) % dimension;
+//
+//    #pragma omp task shared(N, points, dimension) firstprivate(k, init, n)
+//    N->left = kd_tree_construct_parallel(points, init, (n + init) / 2, dimension, k);
+//
+//    #pragma omp task shared(N, points, dimension) firstprivate(k, init, n)
+//    N->right = kd_tree_construct_parallel(points, ((n + init) / 2) + 1, n, dimension, k);
+//
+//    #pragma omp taskwait
+//
+//    return N;
+//}
 
-    k = (k + 1) % dimension;
-    
-    #pragma omp task shared(N, points, dimension) firstprivate(k, init, n)
-    N->left = kd_tree_construct(points, init, (n + init) / 2, dimension, k);
-    
-    #pragma omp task shared(N, points, dimension) firstprivate(k, init, n)
-    N->right = kd_tree_construct(points, ((n + init) / 2) + 1, n, dimension, k);
-
-    #pragma omp taskwait
-
-    return N;
-}
+//void range_search_parallel(Node *node, int dimension, int k, Range range, Result *result){
+//    if (node != NULL){
+//        int i;
+//        char dimension_flag = 1;
+//        for (i = 0; i < dimension && dimension_flag; ++i)
+//            dimension_flag = (char) (node->data[i] >= range.leftPoint[i] && node->data[i] <= range.rightPoint[i]);
+//
+//        if (dimension_flag) {
+//            #pragma omp critical
+//            *result = *result + 1;
+//        }
+//
+//        int k_next = (k + 1) % dimension;
+//
+//        if (node->data[k] >= range.leftPoint[k]) {
+//            #pragma omp task shared(node, dimension, range, result) firstprivate(k_next) private(i, dimension_flag)
+//            range_search_parallel(node->left, dimension, k_next, range, result);
+//        }
+//
+//        if (node->data[k] <= range.rightPoint[k]) {
+//            #pragma omp task shared(node, dimension, range, result) firstprivate(k_next) private(i, dimension_flag)
+//            range_search_parallel(node->right, dimension, k_next, range, result);
+//        }
+//    }
+//}

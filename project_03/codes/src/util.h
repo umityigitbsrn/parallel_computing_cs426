@@ -61,5 +61,9 @@ void range_search(Node *node, int dimension, int k, Range range, Result *result)
 
 void free_kd_tree(Node *root);
 
-Node *kd_tree_construct_parallel(Point *points, unsigned long init, unsigned long n, int dimension, int k);
+Point select_median_point(Point *arr, unsigned long init, unsigned long n, int dimension);
+
+//Node *kd_tree_construct_parallel(Point *points, unsigned long init, unsigned long n, int dimension, int k);
+
+//void range_search_parallel(Node *node, int dimension, int k, Range range, Result *result);
 #endif /* UTIL_H_ */

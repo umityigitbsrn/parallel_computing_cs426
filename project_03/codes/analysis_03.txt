@@ -1,0 +1,1157 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 17K of event 'cycles'
+# Event count (approx.): 13704326022
+#
+# Overhead  Command      Shared Object      Symbol                             
+# ........  ...........  .................  ...................................
+#
+    95.08%  kdtree_perf  kdtree_perf        [.] range_search
+            |          
+            |--99.97%--range_search
+            |          |          
+            |          |--99.99%--range_search
+            |          |          |          
+            |          |          |--99.98%--range_search
+            |          |          |          |          
+            |          |          |          |--99.95%--range_search
+            |          |          |          |          |          
+            |          |          |          |          |--99.93%--range_search
+            |          |          |          |          |          |          
+            |          |          |          |          |          |--99.91%--range_search
+            |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |--99.78%--range_search
+            |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |--99.63%--range_search
+            |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |--99.38%--range_search
+            |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |--99.07%--range_search
+            |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |          |--98.13%--range_search
+            |          |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |          |          |--97.36%--range_search
+            |          |          |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |          |          |          |--95.35%--range_search
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |--92.29%--range_search
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |--86.12%--range_search
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |--75.21%--range_search
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |--50.46%--main
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          __libc_start_main
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |           --49.54%--range_search
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |                     |          
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |                     |--95.77%--main
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |                     |          __libc_start_main
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |                     |          
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |                      --4.23%--range_search
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |                                main
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |                                __libc_start_main
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |           --24.79%--main
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |                     __libc_start_main
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |           --13.88%--main
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |                     __libc_start_main
+            |          |          |          |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |          |          |          |           --7.71%--main
+            |          |          |          |          |          |          |          |          |          |          |          |          |                     __libc_start_main
+            |          |          |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |          |          |           --4.65%--main
+            |          |          |          |          |          |          |          |          |          |          |          |                     __libc_start_main
+            |          |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |          |           --2.64%--main
+            |          |          |          |          |          |          |          |          |          |          |                     __libc_start_main
+            |          |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |          |           --1.87%--main
+            |          |          |          |          |          |          |          |          |          |                     __libc_start_main
+            |          |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |          |           --0.93%--main
+            |          |          |          |          |          |          |          |          |                     __libc_start_main
+            |          |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |           --0.62%--main
+            |          |          |          |          |          |          |          |                     __libc_start_main
+            |          |          |          |          |          |          |           --0.37%--[...] (inlined)
+            |          |          |          |          |          |           --0.22%--[...] (inlined)
+            |          |          |          |          |           --0.09%--[...] (inlined)
+            |          |          |          |           --0.07%--[...] (inlined)
+            |          |          |           --0.05%--[...] (inlined)
+            |          |           --0.02%--[...] (inlined)
+            |           --0.01%--[...] (inlined)
+             --0.03%--[...] (inlined)
+
+     2.48%  kdtree_perf  libc-2.31.so       [.] __vfscanf_internal
+            |          
+            |--97.17%--__vfscanf_internal
+            |          __isoc99_fscanf
+            |          main
+            |          __libc_start_main
+            |          
+            |--1.17%--__strtoll_internal
+            |          __isoc99_fscanf
+            |          main
+            |          __libc_start_main
+            |          
+            |--1.05%--__isoc99_fscanf
+            |          main
+            |          __libc_start_main
+             --0.61%--[...] (inlined)
+
+     0.84%  kdtree_perf  kdtree_perf        [.] select_median_point
+            |
+            ---select_median_point
+               kd_tree_construct
+               |          
+               |--87.84%--kd_tree_construct
+               |          |          
+               |          |--91.01%--kd_tree_construct
+               |          |          |          
+               |          |          |--92.28%--kd_tree_construct
+               |          |          |          |          
+               |          |          |          |--90.61%--kd_tree_construct
+               |          |          |          |          |          
+               |          |          |          |          |--94.91%--kd_tree_construct
+               |          |          |          |          |          |          
+               |          |          |          |          |          |--90.48%--kd_tree_construct
+               |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |--84.83%--kd_tree_construct
+               |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |          |--87.45%--kd_tree_construct
+               |          |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |          |          |--77.61%--kd_tree_construct
+               |          |          |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |          |          |          |--78.82%--kd_tree_construct
+               |          |          |          |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |          |          |          |          |--83.38%--kd_tree_construct
+               |          |          |          |          |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |          |          |          |          |          |--80.02%--kd_tree_construct
+               |          |          |          |          |          |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |          |          |          |          |          |          |--70.15%--kd_tree_construct
+               |          |          |          |          |          |          |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |          |          |          |          |          |          |          |--50.15%--kd_tree_construct
+               |          |          |          |          |          |          |          |          |          |          |          |          |          |          main
+               |          |          |          |          |          |          |          |          |          |          |          |          |          |          __libc_start_main
+               |          |          |          |          |          |          |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |          |          |          |          |          |          |           --49.85%--main
+               |          |          |          |          |          |          |          |          |          |          |          |          |                     __libc_start_main
+               |          |          |          |          |          |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |          |          |          |          |          |           --29.85%--main
+               |          |          |          |          |          |          |          |          |          |          |          |                     __libc_start_main
+               |          |          |          |          |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |          |          |          |          |           --19.98%--main
+               |          |          |          |          |          |          |          |          |          |          |                     __libc_start_main
+               |          |          |          |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |          |          |          |           --16.62%--main
+               |          |          |          |          |          |          |          |          |          |                     __libc_start_main
+               |          |          |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |          |          |           --21.18%--main
+               |          |          |          |          |          |          |          |          |                     __libc_start_main
+               |          |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |          |           --22.39%--main
+               |          |          |          |          |          |          |          |                     __libc_start_main
+               |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |           --12.55%--main
+               |          |          |          |          |          |          |                     __libc_start_main
+               |          |          |          |          |          |          |          
+               |          |          |          |          |          |           --15.17%--main
+               |          |          |          |          |          |                     __libc_start_main
+               |          |          |          |          |          |          
+               |          |          |          |          |           --9.52%--main
+               |          |          |          |          |                     __libc_start_main
+               |          |          |          |          |          
+               |          |          |          |           --5.09%--main
+               |          |          |          |                     __libc_start_main
+               |          |          |          |          
+               |          |          |           --9.39%--main
+               |          |          |                     __libc_start_main
+               |          |          |          
+               |          |           --7.72%--main
+               |          |                     __libc_start_main
+               |          |          
+               |           --8.99%--main
+               |                     __libc_start_main
+               |          
+                --12.16%--main
+                          __libc_start_main
+
+     0.43%  kdtree_perf  libc-2.31.so       [.] __GI_____strtoll_l_internal
+            |
+            ---__GI_____strtoll_l_internal
+               |          
+               |--27.09%--__isoc99_fscanf
+               |          main
+               |          __libc_start_main
+                --72.91%--[...] (inlined)
+
+     0.26%  kdtree_perf  kdtree_perf        [.] read_points_file
+            |
+            ---read_points_file
+               main
+               __libc_start_main
+
+     0.14%  kdtree_perf  libc-2.31.so       [.] __isoc99_fscanf
+            |          
+            |--94.61%--__isoc99_fscanf
+            |          main
+            |          __libc_start_main
+            |          
+             --5.39%--__vfscanf_internal
+                       main
+                       __libc_start_main
+
+     0.13%  kdtree_perf  libc-2.31.so       [.] _IO_sputbackc
+            |
+            ---_IO_sputbackc
+               __isoc99_fscanf
+               main
+               __libc_start_main
+
+     0.12%  kdtree_perf  kdtree_perf        [.] swap_pointers
+            |          
+            |--93.70%--swap_pointers
+            |          |          
+            |          |--93.19%--select_median_point
+            |          |          kd_tree_construct
+            |          |          kd_tree_construct
+            |          |          kd_tree_construct
+            |          |          |          
+            |          |          |--85.82%--kd_tree_construct
+            |          |          |          |          
+            |          |          |          |--91.68%--kd_tree_construct
+            |          |          |          |          |          
+            |          |          |          |          |--63.64%--kd_tree_construct
+            |          |          |          |          |          |          
+            |          |          |          |          |          |--71.16%--kd_tree_construct
+            |          |          |          |          |          |          kd_tree_construct
+            |          |          |          |          |          |          kd_tree_construct
+            |          |          |          |          |          |          kd_tree_construct
+            |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |--79.66%--kd_tree_construct
+            |          |          |          |          |          |          |          kd_tree_construct
+            |          |          |          |          |          |          |          kd_tree_construct
+            |          |          |          |          |          |          |          kd_tree_construct
+            |          |          |          |          |          |          |          kd_tree_construct
+            |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |          |--75.37%--main
+            |          |          |          |          |          |          |          |          __libc_start_main
+            |          |          |          |          |          |          |          |          
+            |          |          |          |          |          |          |           --24.63%--kd_tree_construct
+            |          |          |          |          |          |          |                     main
+            |          |          |          |          |          |          |                     __libc_start_main
+            |          |          |          |          |          |          |          
+            |          |          |          |          |          |           --20.34%--main
+            |          |          |          |          |          |                     __libc_start_main
+            |          |          |          |          |          |          
+            |          |          |          |          |           --28.84%--main
+            |          |          |          |          |                     __libc_start_main
+            |          |          |          |          |          
+            |          |          |          |           --36.36%--main
+            |          |          |          |                     __libc_start_main
+            |          |          |          |          
+            |          |          |           --8.32%--main
+            |          |          |                     __libc_start_main
+            |          |          |          
+            |          |           --14.18%--main
+            |          |                     __libc_start_main
+            |          |          
+            |           --6.81%--kd_tree_construct
+            |                     kd_tree_construct
+            |                     kd_tree_construct
+            |                     kd_tree_construct
+            |                     kd_tree_construct
+            |                     kd_tree_construct
+            |                     kd_tree_construct
+            |                     main
+            |                     __libc_start_main
+            |          
+             --6.30%--select_median_point
+                       kd_tree_construct
+                       kd_tree_construct
+                       kd_tree_construct
+                       main
+                       __libc_start_main
+
+     0.05%  kdtree_perf  libc-2.31.so       [.] _int_malloc
+            |
+            ---_int_malloc
+
+     0.03%  kdtree_perf  [kernel.kallsyms]  [k] copy_user_enhanced_fast_string
+            |
+            ---copy_user_enhanced_fast_string
+               copy_page_to_iter
+               generic_file_buffered_read
+               generic_file_read_iter
+               ext4_file_read_iter
+               new_sync_read
+               vfs_read
+               ksys_read
+               __x64_sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               read
+               0
+
+     0.03%  kdtree_perf  kdtree_perf        [.] read_queries_file
+            |
+            ---read_queries_file
+               main
+               __libc_start_main
+
+     0.02%  kdtree_perf  [kernel.kallsyms]  [k] update_curr
+            |
+            ---update_curr
+               task_tick_fair
+               scheduler_tick
+               update_process_times
+               tick_sched_handle.isra.0
+               tick_sched_timer
+               __hrtimer_run_queues
+               hrtimer_interrupt
+               __sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               asm_sysvec_apic_timer_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               |          
+               |--75.57%--range_search
+               |          main
+               |          __libc_start_main
+               |          
+                --24.43%--main
+                          __libc_start_main
+
+     0.02%  kdtree_perf  libc-2.31.so       [.] read
+            |
+            ---read
+               0
+
+     0.02%  kdtree_perf  [kernel.kallsyms]  [k] rmqueue
+            |
+            ---rmqueue
+               get_page_from_freelist
+               __alloc_pages_nodemask
+               alloc_pages_vma
+               do_anonymous_page
+               __handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               __vfscanf_internal
+               __isoc99_fscanf
+               main
+               __libc_start_main
+
+     0.02%  kdtree_perf  libc-2.31.so       [.] __vfprintf_internal
+            |
+            ---__vfprintf_internal
+               fprintf
+               main
+               __libc_start_main
+
+     0.02%  kdtree_perf  kdtree_perf        [.] free_kd_tree
+            |
+            ---free_kd_tree
+               free_kd_tree
+               free_kd_tree
+               free_kd_tree
+               free_kd_tree
+               free_kd_tree
+               free_kd_tree
+               free_kd_tree
+               free_kd_tree
+               free_kd_tree
+               free_kd_tree
+               free_kd_tree
+               free_kd_tree
+               free_kd_tree
+               free_kd_tree
+               |          
+               |--66.82%--free_kd_tree
+               |          |          
+               |          |--50.16%--main
+               |          |          __libc_start_main
+               |          |          
+               |           --49.84%--free_kd_tree
+               |                     main
+               |                     __libc_start_main
+               |          
+                --33.18%--main
+                          __libc_start_main
+
+     0.02%  kdtree_perf  kdtree_perf        [.] main
+            |
+            ---main
+               __libc_start_main
+
+     0.02%  kdtree_perf  [kernel.kallsyms]  [k] __sysvec_apic_timer_interrupt
+            |
+            ---__sysvec_apic_timer_interrupt
+               |          
+               |--66.32%--asm_sysvec_apic_timer_interrupt
+               |          range_search
+               |          range_search
+               |          range_search
+               |          range_search
+               |          range_search
+               |          range_search
+               |          range_search
+               |          range_search
+               |          range_search
+               |          range_search
+               |          range_search
+               |          range_search
+               |          range_search
+               |          range_search
+               |          range_search
+               |          range_search
+               |          |          
+               |          |--50.72%--range_search
+               |          |          main
+               |          |          __libc_start_main
+               |          |          
+               |           --49.28%--main
+               |                     __libc_start_main
+               |          
+                --33.68%--sysvec_apic_timer_interrupt
+                          asm_sysvec_apic_timer_interrupt
+                          range_search
+                          range_search
+                          range_search
+                          range_search
+                          range_search
+                          range_search
+                          range_search
+                          range_search
+                          range_search
+                          range_search
+                          range_search
+                          range_search
+                          range_search
+                          range_search
+                          range_search
+                          main
+                          __libc_start_main
+
+     0.02%  kdtree_perf  [kernel.kallsyms]  [k] native_irq_return_iret
+            |
+            ---__vfscanf_internal
+               __isoc99_fscanf
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  kdtree_perf        [.] 0x0000000000001124
+            |
+            ---__isoc99_fscanf
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  kdtree_perf        [.] kd_tree_construct
+            |
+            ---kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               |          
+               |--50.12%--kd_tree_construct
+               |          main
+               |          __libc_start_main
+               |          
+                --49.88%--main
+                          __libc_start_main
+
+     0.01%  kdtree_perf  libc-2.31.so       [.] __strtoll_internal
+            |          
+            |--51.21%--__GI_____strtoll_l_internal
+            |          __isoc99_fscanf
+            |          main
+            |          __libc_start_main
+            |          
+             --48.79%--__strtoll_internal
+                       __isoc99_fscanf
+                       main
+                       __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] perf_event_task_tick
+            |
+            ---perf_event_task_tick
+               scheduler_tick
+               update_process_times
+               tick_sched_handle.isra.0
+               tick_sched_timer
+               __hrtimer_run_queues
+               hrtimer_interrupt
+               __sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               asm_sysvec_apic_timer_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               |          
+               |--50.68%--main
+               |          __libc_start_main
+               |          
+                --49.32%--range_search
+                          main
+                          __libc_start_main
+
+     0.01%  kdtree_perf  libc-2.31.so       [.] _int_free
+            |
+            ---_int_free
+               0x1
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] fpregs_assert_state_consistent
+            |
+            ---fpregs_assert_state_consistent
+               exit_to_user_mode_prepare
+               irqentry_exit_to_user_mode
+               irqentry_exit
+               sysvec_apic_timer_interrupt
+               asm_sysvec_apic_timer_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] error_entry
+            |
+            ---asm_exc_page_fault
+               __vfscanf_internal
+               __isoc99_fscanf
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] ext4_file_read_iter
+            |
+            ---ext4_file_read_iter
+               vfs_read
+               ksys_read
+               __x64_sys_read
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               read
+               0
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] rcu_read_unlock_strict
+            |
+            ---rcu_read_unlock_strict
+               cgroup_throttle_swaprate
+               do_anonymous_page
+               __handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               __vfscanf_internal
+               __isoc99_fscanf
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] __count_memcg_events
+            |
+            ---__count_memcg_events
+               mem_cgroup_charge_statistics.isra.0
+               mem_cgroup_charge
+               do_anonymous_page
+               __handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               __vfscanf_internal
+               __isoc99_fscanf
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] clear_page_erms
+            |
+            ---clear_page_erms
+               get_page_from_freelist
+               __alloc_pages_nodemask
+               alloc_pages_vma
+               do_anonymous_page
+               __handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               __vfscanf_internal
+               __isoc99_fscanf
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] __handle_mm_fault
+            |
+            ---__handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               __vfscanf_internal
+               __isoc99_fscanf
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] do_user_addr_fault
+            |
+            ---do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               _int_malloc
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] obj_cgroup_charge
+            |
+            ---obj_cgroup_charge
+               kmem_cache_alloc
+               vm_area_dup
+               __split_vma
+               __do_munmap
+               __vm_munmap
+               vm_munmap
+               elf_map
+               load_elf_binary
+               exec_binprm
+               bprm_execve
+               do_execveat_common.isra.0
+               __x64_sys_execve
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               0x7f70ed0622fb
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] down_read_trylock
+            |
+            ---down_read_trylock
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               _int_malloc
+
+     0.01%  kdtree_perf  kdtree_perf        [.] newNode
+            |
+            ---newNode
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               kd_tree_construct
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] alloc_pages_vma
+            |
+            ---__get_vma_policy
+               do_anonymous_page
+               __handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               __vfscanf_internal
+               __isoc99_fscanf
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] sync_regs
+            |
+            ---sync_regs
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] task_tick_fair
+            |
+            ---task_tick_fair
+               scheduler_tick
+               update_process_times
+               tick_sched_handle.isra.0
+               tick_sched_timer
+               __hrtimer_run_queues
+               hrtimer_interrupt
+               __sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               asm_sysvec_apic_timer_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] __mod_node_page_state
+            |
+            ---__mod_node_page_state
+               __mod_lruvec_state
+               release_pages
+               free_pages_and_swap_cache
+               tlb_flush_mmu
+               tlb_finish_mmu
+               exit_mmap
+               mmput
+               do_exit
+               do_group_exit
+               __x64_sys_exit_group
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] free_pcppages_bulk
+            |
+            ---free_pcppages_bulk
+               free_unref_page_commit
+               free_unref_page_list
+               release_pages
+               free_pages_and_swap_cache
+               tlb_flush_mmu
+               tlb_finish_mmu
+               unmap_region
+               __do_munmap
+               __vm_munmap
+               __x64_sys_munmap
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __munmap
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] zap_pte_range.isra.0
+            |
+            ---zap_pte_range.isra.0
+               unmap_page_range
+               unmap_single_vma
+               unmap_vmas
+               unmap_region
+               __do_munmap
+               __vm_munmap
+               __x64_sys_munmap
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __munmap
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] pvclock_gtod_notify
+            |
+            ---pvclock_gtod_notify
+               timekeeping_update
+               timekeeping_advance
+               update_wall_time
+               tick_do_update_jiffies64
+               tick_sched_do_timer
+               tick_sched_timer
+               __hrtimer_run_queues
+               hrtimer_interrupt
+               __sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               asm_sysvec_apic_timer_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] tick_do_update_jiffies64
+            |
+            ---tick_do_update_jiffies64
+               tick_sched_timer
+               __hrtimer_run_queues
+               hrtimer_interrupt
+               __sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               asm_sysvec_apic_timer_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] update_fast_timekeeper
+            |
+            ---update_fast_timekeeper
+               timekeeping_update
+               timekeeping_advance
+               update_wall_time
+               tick_do_update_jiffies64
+               tick_sched_do_timer
+               tick_sched_timer
+               __hrtimer_run_queues
+               hrtimer_interrupt
+               __sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               asm_sysvec_apic_timer_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] asm_sysvec_apic_timer_interrupt
+            |
+            ---asm_sysvec_apic_timer_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] update_cfs_group
+            |
+            ---update_cfs_group
+               scheduler_tick
+               update_process_times
+               tick_sched_handle.isra.0
+               tick_sched_timer
+               __hrtimer_run_queues
+               hrtimer_interrupt
+               __sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               asm_sysvec_apic_timer_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] __hrtimer_run_queues
+            |
+            ---__hrtimer_run_queues
+               hrtimer_interrupt
+               __sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               asm_sysvec_apic_timer_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] lru_cache_add
+            |
+            ---lru_cache_add
+               lru_cache_add_inactive_or_unevictable
+               do_anonymous_page
+               __handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               __vfscanf_internal
+               __isoc99_fscanf
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] account_user_time
+            |
+            ---account_user_time
+               account_process_tick
+               update_process_times
+               tick_sched_handle.isra.0
+               tick_sched_timer
+               __hrtimer_run_queues
+               hrtimer_interrupt
+               __sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               asm_sysvec_apic_timer_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] rcu_advance_cbs
+            |
+            ---rcu_advance_cbs
+               __note_gp_changes
+               note_gp_changes
+               rcu_core
+               rcu_core_si
+               __softirqentry_text_start
+               asm_call_sysvec_on_stack
+               do_softirq_own_stack
+               irq_exit_rcu
+               sysvec_apic_timer_interrupt
+               asm_sysvec_apic_timer_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               main
+               __libc_start_main
+
+     0.01%  kdtree_perf  [kernel.kallsyms]  [k] handle_irq_event_percpu
+            |
+            ---handle_irq_event_percpu
+               handle_edge_irq
+               common_interrupt
+               asm_common_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               main
+               __libc_start_main
+
+     0.00%  kdtree_perf  [kernel.kallsyms]  [k] _raw_spin_lock_irqsave
+            |
+            ---_raw_spin_lock_irqsave
+               timekeeping_advance
+               update_wall_time
+               tick_do_update_jiffies64
+               tick_sched_do_timer
+               tick_sched_timer
+               __hrtimer_run_queues
+               hrtimer_interrupt
+               __sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               asm_sysvec_apic_timer_interrupt
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               range_search
+               main
+               __libc_start_main
+
+     0.00%  perf         [kernel.kallsyms]  [k] nmi_restore
+            |
+            ---native_write_msr
+               intel_pmu_enable_all
+               x86_pmu_enable
+               perf_pmu_enable.part.0
+               ctx_resched
+               perf_event_exec
+               begin_new_exec
+               load_elf_binary
+               exec_binprm
+               bprm_execve
+               do_execveat_common.isra.0
+               __x64_sys_execve
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               0x7f70ed0622fb
+
+     0.00%  perf         [kernel.kallsyms]  [k] native_write_msr
+            |
+            ---native_write_msr
+               intel_pmu_enable_all
+               x86_pmu_enable
+               perf_pmu_enable.part.0
+               ctx_resched
+               perf_event_exec
+               begin_new_exec
+               load_elf_binary
+               exec_binprm
+               bprm_execve
+               do_execveat_common.isra.0
+               __x64_sys_execve
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               0x7f70ed0622fb
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
