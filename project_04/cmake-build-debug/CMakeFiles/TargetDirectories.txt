@@ -1,0 +1,3 @@
+/home/umityigitbsrn/Desktop/parallel/parallel_computing_cs426/project_04/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/umityigitbsrn/Desktop/parallel/parallel_computing_cs426/project_04/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/umityigitbsrn/Desktop/parallel/parallel_computing_cs426/project_04/cmake-build-debug/CMakeFiles/project_04.dir

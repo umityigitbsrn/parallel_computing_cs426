@@ -1,0 +1,4 @@
+/home/umityigitbsrn/clion-2021.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/umityigitbsrn/clion-2021.3/bin/ninja/linux/ninja -G Ninja /home/umityigitbsrn/Desktop/parallel/parallel_computing_cs426/project_04
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/umityigitbsrn/Desktop/parallel/parallel_computing_cs426/project_04/cmake-build-debug
