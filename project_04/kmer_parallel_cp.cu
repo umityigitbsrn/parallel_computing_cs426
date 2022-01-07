@@ -71,14 +71,26 @@ int main(int argc, char** argv)
     cudaMemcpy(dev_ref, reference_str, size, cudaMemcpyHostToDevice);
 
     // string list
-    StringList *dev_str_list;
-    size = sizeof(StringList);
-    cudaMalloc(&dev_str_list, size);
-    cudaMemcpy(dev_str_list, &queries, size, cudaMemcpyHostToDevice);
-//    char *dev_read;
-//    size = len_read * sizeof(char);
-//    cudaMalloc(&dev_read, size);
-//    cudaMemcpy(dev_read, queries.array[0], size, cudaMemcpyHostToDevice);
+//    StringList *dev_str_list;
+//    size = sizeof(StringList);
+//    cudaMalloc(&dev_str_list, size);
+//    cudaMemcpy(dev_str_list, &queries, size, cudaMemcpyHostToDevice);
+
+    char *read_tmp = (char *) malloc(sizeof(char) * len_read * queries.used);
+    int tmp_index = 0;
+    for (int i = 0; i < queries.used; ++i){
+        for (int j = 0; j < len_read; ++j){
+            read_tmp[tmp_index] = queries.array[i][j];
+            tmp_index++;
+        }
+    }
+
+    printf("read_tmp: %s\n", read_tmp);
+
+    char *dev_read;
+    size = len_read * sizeof(char) * queries.used;
+    cudaMalloc(&dev_read, size);
+    cudaMemcpy(dev_read, read_tmp, size, cudaMemcpyHostToDevice);
 
     // output
     size = sizeof(int) * (len_read - k + 1) * queries.used;
@@ -93,17 +105,12 @@ int main(int argc, char** argv)
     dim3 dim_block((len_read - k + 1), queries.used);
 //    dim3 dim_block((len_read - k + 1), 1);
 
-    kernel_fnc<<<dim_grid, dim_block>>>(dev_ref, dev_str_list, dev_out, k, reference_length, len_read);
-//    kernel_fnc<<<dim_grid, dim_block>>>(dev_ref, dev_read, dev_out, k, reference_length, len_read);
+//    kernel_fnc<<<dim_grid, dim_block>>>(dev_ref, dev_str_list, dev_out, k, reference_length, len_read);
+    kernel_fnc<<<dim_grid, dim_block>>>(dev_ref, dev_read, dev_out, k, reference_length, len_read);
 //    cudaThreadSynchronize();
 
     // device to host
     int *host_out;
-    host_out = (int *) malloc(5 * sizeof(int));
-    for (int i = 0; i < 5; ++i){
-        host_out[i] = 1;
-    }
-
     cudaMemcpy(host_out, dev_out, size, cudaMemcpyDeviceToHost);
 
     for (int i = 0; i < queries.used; ++i){
@@ -116,8 +123,8 @@ int main(int argc, char** argv)
 
     // free cuda
     cudaFree(dev_ref);
-    cudaFree(dev_str_list);
-//    cudaFree(dev_read);
+//    cudaFree(dev_str_list);
+    cudaFree(dev_read);
     cudaFree(dev_out);
 
     //Free up
@@ -125,4 +132,5 @@ int main(int argc, char** argv)
 
     free(reference_str);
     free(read_str);
+    free(read_tmp);
 }
