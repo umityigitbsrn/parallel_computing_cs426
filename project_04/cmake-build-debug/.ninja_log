@@ -1,6 +1,6 @@
 # ninja log v5
-0	1054	1641516204089693554	CMakeFiles/project_04.dir/demo.cu.o	a2ed6386b9867edc
-0	1059	1641516204081693571	CMakeFiles/project_04.dir/kmer_parallel.cu.o	fb729acca7750ae9
 0	1251	1641516204285693127	CMakeFiles/project_04.dir/util.cu.o	1af61130a21ed610
-0	1257	1641516204293693109	CMakeFiles/project_04.dir/kmer_serial.cu.o	1fbd3b70f4d93dfb
 1257	1291	1641516204437692796	CMakeFiles/project_04.dir/cmake_device_link.o	768693a11ca6c7b7
+0	1059	1641516204081693571	CMakeFiles/project_04.dir/kmer_parallel.cu.o	fb729acca7750ae9
+0	1054	1641516204089693554	CMakeFiles/project_04.dir/demo.cu.o	a2ed6386b9867edc
+0	1257	1641516204293693109	CMakeFiles/project_04.dir/kmer_serial.cu.o	1fbd3b70f4d93dfb

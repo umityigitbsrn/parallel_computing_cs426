@@ -71,18 +71,18 @@ int main(int argc, char** argv)
     cudaMemcpy(dev_ref, reference_str, size, cudaMemcpyHostToDevice);
 
     // string list
-//    StringList *dev_str_list;
-//    size = sizeof(StringList);
-//    cudaMalloc(&dev_str_list, size);
-//    cudaMemcpy(dev_str_list, &queries, size, cudaMemcpyHostToDevice);
-    char *dev_read;
-    size = len_read * sizeof(char);
-    cudaMalloc(&dev_read, size);
-    cudaMemcpy(dev_read, queries.array[0], size, cudaMemcpyHostToDevice);
+    StringList *dev_str_list;
+    size = sizeof(StringList);
+    cudaMalloc(&dev_str_list, size);
+    cudaMemcpy(dev_str_list, &queries, size, cudaMemcpyHostToDevice);
+//    char *dev_read;
+//    size = len_read * sizeof(char);
+//    cudaMalloc(&dev_read, size);
+//    cudaMemcpy(dev_read, queries.array[0], size, cudaMemcpyHostToDevice);
 
     // output
-//    size = sizeof(int) * (len_read - k + 1) * queries.used;
-    size = sizeof(int) * (len_read - k + 1);
+    size = sizeof(int) * (len_read - k + 1) * queries.used;
+//    size = sizeof(int) * (len_read - k + 1);
     int *dev_out;
     cudaMalloc(&dev_out, size);
 
@@ -90,11 +90,11 @@ int main(int argc, char** argv)
 
     // set thread and block numbers
     dim3 dim_grid(1, 1);
-//    dim3 dim_block((len_read - k + 1), queries.used);
-    dim3 dim_block((len_read - k + 1), 1);
+    dim3 dim_block((len_read - k + 1), queries.used);
+//    dim3 dim_block((len_read - k + 1), 1);
 
-//    kernel_fnc<<<dim_grid, dim_block>>>(dev_ref, dev_str_list, dev_out, k, reference_length, len_read);
-    kernel_fnc<<<dim_grid, dim_block>>>(dev_ref, dev_read, dev_out, k, reference_length, len_read);
+    kernel_fnc<<<dim_grid, dim_block>>>(dev_ref, dev_str_list, dev_out, k, reference_length, len_read);
+//    kernel_fnc<<<dim_grid, dim_block>>>(dev_ref, dev_read, dev_out, k, reference_length, len_read);
 //    cudaThreadSynchronize();
 
     // device to host
@@ -116,8 +116,8 @@ int main(int argc, char** argv)
 
     // free cuda
     cudaFree(dev_ref);
-//    cudaFree(dev_str_list);
-    cudaFree(dev_read);
+    cudaFree(dev_str_list);
+//    cudaFree(dev_read);
     cudaFree(dev_out);
 
     //Free up

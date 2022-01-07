@@ -3,7 +3,7 @@ project(project_04 CUDA)
 
 set(CMAKE_CUDA_STANDARD 14)
 
-add_executable(project_04 demo.cu util.cu util.h kmer_serial.cu kmer_parallel.cu)
+add_executable(project_04 demo.cu util.cu util.h kmer_serial.cu kmer_parallel.cu kmer_parallel_cp.cu util_parallel.cu util_parallel.h)
 
 set_target_properties(project_04 PROPERTIES
         CUDA_SEPARABLE_COMPILATION ON)
