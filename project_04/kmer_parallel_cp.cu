@@ -85,7 +85,7 @@ int main(int argc, char** argv)
         }
     }
 
-    printf("read_tmp: %s\n", read_tmp);
+//    printf("read_tmp: %s\n", read_tmp);
 
     char *dev_read;
     size = len_read * sizeof(char) * queries.used;
@@ -101,8 +101,16 @@ int main(int argc, char** argv)
     // kernel function
 
     // set thread and block numbers
-    dim3 dim_grid(1, 1);
-    dim3 dim_block((len_read - k + 1), queries.used);
+    
+    unsigned int num_of_threads = (len_read - k + 1) * queries.used;
+    unsigned int num_of_blocks = num_of_threads / 1024;
+    unsigned int remainder = num_of_threads % 1024;
+    
+    if remainder > 0
+	num_of_blocks++;
+
+    dim3 dim_grid(num_of_blocks, 1);
+    dim3 dim_block(1024, 1);
 //    dim3 dim_block((len_read - k + 1), 1);
 
 //    kernel_fnc<<<dim_grid, dim_block>>>(dev_ref, dev_str_list, dev_out, k, reference_length, len_read);
@@ -110,18 +118,33 @@ int main(int argc, char** argv)
 //    cudaThreadSynchronize();
 
     // device to host
-    int *host_out;
+    int *host_out = (int *) malloc(sizeof(int) * size);
     cudaMemcpy(host_out, dev_out, size, cudaMemcpyDeviceToHost);
 
+//    for (int i = 0; i < queries.used; ++i){
+//        prin f("[ ");
+//        for (int j = 0; j < (len_read - k + 1); ++j){
+//            printf("%d ", host_out[i * (len_read - k + 1) + j]);
+//        }
+//        printf("]\n");
+//    }
+
+
     for (int i = 0; i < queries.used; ++i){
-        printf("[ ");
-        for (int j = 0; j < (len_read - k + 1); ++j){
-            printf("%d ", host_out[i * (len_read - k + 1) + j]);
+        printf("source: %s\n", queries.array[i]);
+        for (int j = k; j <= strlen(queries.array[i]); ++j){
+            substring(read_str, queries.array[i], j - k, j);
+            printf("%s", read_str);
+
+            if (host_out[i * (len_read - k + 1) + (j - k)] != -1){
+                printf("( count=1 at index %d)\n", host_out[i * (len_read - k + 1) + (j - k)]);
+            } else {
+                printf("( count=0 at index -1 )\n");
+            }
         }
-        printf("]\n");
     }
 
-    // free cuda
+    // f ee cuda
     cudaFree(dev_ref);
 //    cudaFree(dev_str_list);
     cudaFree(dev_read);
