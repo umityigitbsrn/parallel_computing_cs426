@@ -3,6 +3,7 @@
 //
 
 #include "util.h"
+#include <time.h>
 
 int num_kmer_in_read(char *read, int k);
 
@@ -41,8 +42,8 @@ int main(int argc, char** argv)
 
     reference_length = strlen(reference_str);
 
-    printf("Reference str is = %s\n", reference_str);
-    fclose(fp);
+//    printf("Reference str is = %s\n", reference_str);
+//    fclose(fp);
 
     //Read queries
     StringList queries;
@@ -50,11 +51,11 @@ int main(int argc, char** argv)
     initStringList(&queries, 3);  // initially 3 elements
 
     int success = read_file(read_filename,&queries);
-    if(success){
-        for(int i = 0; i < queries.used; i++) {
-            printf("read : %s\n", queries.array[i]);
-        }
-    }
+//    if(success){
+//        for(int i = 0; i < queries.used; i++) {
+//            printf("read : %s\n", queries.array[i]);
+//        }
+//    }
 
     // substring test
 //    int i, j;
@@ -76,7 +77,8 @@ int main(int argc, char** argv)
     ////////////////////////////////////////////////////////////////////////
     ////////////// THIS IS A GOOD PLACE TO DO YOUR COMPUTATIONS ////////////
     ////////////////////////////////////////////////////////////////////////
-
+    clock_t t;
+    t = clock();
     StringList ref_str_list;
     initStringList(&ref_str_list, 3);
 
@@ -126,6 +128,10 @@ int main(int argc, char** argv)
             }
         }
     }
+
+    t = clock() - t;
+    double elapsed_time = ((double) t)/CLOCKS_PER_SEC;
+    printf("-------elapsed time - serial: %f-------\n", elapsed_time);
 
     write_file(output_filename, result, queries.used, (read_len - k + 1));
 
