@@ -118,22 +118,25 @@ __device__ int d_strncmp( const char * s1, const char * s2, size_t n )
 //        dev_out[(len_read - k + 1) * threadIdx.y + threadIdx.x] = -1;
 //}
 
-__global__ void kernel_fnc(char *dev_ref, char *dev_read, int *dev_out, int k, int len_ref, int len_read){
-	int index = blockIdx.x * 1024 + threadIdx.x; 
-	char *ref_it = dev_ref;
-//    printf("dev_str_list item 0: %s\n", (*dev_str_list).array[0]);
-	char *read_thread_ptr = dev_read + (threadIdx.y * len_read) + threadIdx.x;
+__global__ void kernel_fnc(char *dev_ref, char *dev_read, int *dev_out, int k, int len_ref, int len_read, unsigned int num_of_threads) {
+    int index = blockIdx.x * 1024 + threadIdx.x;
 
-	int l;
-	for (l = 0; l < len_ref - k + 1; l++){
-	    if (d_strncmp(ref_it, read_thread_ptr, k) == 0){
-	        dev_out[threadIdx.y * (len_read - k + 1) + threadIdx.x] = l;
-	        break;
-	    }
-	
-	    ref_it++;
-	}
-	
-	if (l == len_ref - k + 1)
-	    dev_out[threadIdx.y * (len_read - k + 1) + threadIdx.x] = -1;
+    if (!(0 <= index && index < num_of_threads)) {
+        char *ref_it = dev_ref;
+//    printf("dev_str_list item 0: %s\n", (*dev_str_list).array[0]);
+        char *read_thread_ptr = dev_read + index;
+
+        int l;
+        for (l = 0; l < len_ref - k + 1; l++) {
+            if (d_strncmp(ref_it, read_thread_ptr, k) == 0) {
+                dev_out[index] = l;
+                break;
+            }
+
+            ref_it++;
+        }
+
+        if (l == len_ref - k + 1)
+            dev_out[index] = -1;
+    }
 }

@@ -106,15 +106,15 @@ int main(int argc, char** argv)
     unsigned int num_of_blocks = num_of_threads / 1024;
     unsigned int remainder = num_of_threads % 1024;
     
-    if remainder > 0
-	num_of_blocks++;
+    if (remainder > 0)
+	    num_of_blocks++;
 
     dim3 dim_grid(num_of_blocks, 1);
     dim3 dim_block(1024, 1);
 //    dim3 dim_block((len_read - k + 1), 1);
 
 //    kernel_fnc<<<dim_grid, dim_block>>>(dev_ref, dev_str_list, dev_out, k, reference_length, len_read);
-    kernel_fnc<<<dim_grid, dim_block>>>(dev_ref, dev_read, dev_out, k, reference_length, len_read);
+    kernel_fnc<<<dim_grid, dim_block>>>(dev_ref, dev_read, dev_out, k, reference_length, len_read, num_of_threads);
 //    cudaThreadSynchronize();
 
     // device to host
