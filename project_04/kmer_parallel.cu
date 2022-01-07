@@ -3,6 +3,7 @@
 //
 
 #include "util_parallel.h"
+#include <time.h>
 
 int num_kmer_in_read(char *read, int k);
 
@@ -61,6 +62,8 @@ int main(int argc, char** argv)
     ////////////// THIS IS A GOOD PLACE TO DO YOUR COMPUTATIONS ////////////
     ////////////////////////////////////////////////////////////////////////
 
+    clock_t t;
+    t = clock();
     // send from host to device
     int len_read = strlen(queries.array[0]);
 
@@ -143,6 +146,10 @@ int main(int argc, char** argv)
 //            }
 //        }
 //    }
+
+    t = clock() - t;
+    double elapsed_time = ((double) t)/CLOCKS_PER_SEC;
+    printf("-------elapsed time - parallel: %f-------\n", elapsed_time);
 
     write_file(output_filename, host_out, queries.used, len_read - k + 1);
 
