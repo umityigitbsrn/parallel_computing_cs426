@@ -90,6 +90,12 @@ build CMakeFiles/project_04.dir/kmer_serial.cu.o: CUDA_COMPILER__project_04_Debu
   OBJECT_DIR = CMakeFiles/project_04.dir
   OBJECT_FILE_DIR = CMakeFiles/project_04.dir
 
+build CMakeFiles/project_04.dir/kmer_parallel.cu.o: CUDA_COMPILER__project_04_Debug /home/umityigitbsrn/Desktop/parallel/parallel_computing_cs426/project_04/kmer_parallel.cu || cmake_object_order_depends_target_project_04
+  DEP_FILE = CMakeFiles/project_04.dir/kmer_parallel.cu.o.d
+  FLAGS = -g --generate-code=arch=compute_30,code=[compute_30,sm_30] -std=c++14
+  OBJECT_DIR = CMakeFiles/project_04.dir
+  OBJECT_FILE_DIR = CMakeFiles/project_04.dir
+
 
 # =============================================================================
 # Device Link build statements for EXECUTABLE target project_04
@@ -98,7 +104,7 @@ build CMakeFiles/project_04.dir/kmer_serial.cu.o: CUDA_COMPILER__project_04_Debu
 #############################################
 # Link the executable CMakeFiles/project_04.dir/cmake_device_link.o
 
-build CMakeFiles/project_04.dir/cmake_device_link.o: CUDA_EXECUTABLE_DEVICE_LINKER__project_04_Debug CMakeFiles/project_04.dir/demo.cu.o CMakeFiles/project_04.dir/util.cu.o CMakeFiles/project_04.dir/kmer_serial.cu.o
+build CMakeFiles/project_04.dir/cmake_device_link.o: CUDA_EXECUTABLE_DEVICE_LINKER__project_04_Debug CMakeFiles/project_04.dir/demo.cu.o CMakeFiles/project_04.dir/util.cu.o CMakeFiles/project_04.dir/kmer_serial.cu.o CMakeFiles/project_04.dir/kmer_parallel.cu.o
   LANGUAGE_COMPILE_FLAGS = -g --generate-code=arch=compute_30,code=[compute_30,sm_30]
   LINK_LIBRARIES = -lcudadevrt -lcudart_static -lrt -lpthread -ldl
   OBJECT_DIR = CMakeFiles/project_04.dir
@@ -111,7 +117,7 @@ build CMakeFiles/project_04.dir/cmake_device_link.o: CUDA_EXECUTABLE_DEVICE_LINK
 #############################################
 # Link the executable project_04
 
-build project_04: CUDA_EXECUTABLE_LINKER__project_04_Debug CMakeFiles/project_04.dir/demo.cu.o CMakeFiles/project_04.dir/util.cu.o CMakeFiles/project_04.dir/kmer_serial.cu.o CMakeFiles/project_04.dir/cmake_device_link.o
+build project_04: CUDA_EXECUTABLE_LINKER__project_04_Debug CMakeFiles/project_04.dir/demo.cu.o CMakeFiles/project_04.dir/util.cu.o CMakeFiles/project_04.dir/kmer_serial.cu.o CMakeFiles/project_04.dir/kmer_parallel.cu.o CMakeFiles/project_04.dir/cmake_device_link.o
   FLAGS = -g --generate-code=arch=compute_30,code=[compute_30,sm_30]
   LINK_LIBRARIES = -lcudadevrt  -lcudart_static  -lrt  -lpthread  -ldl
   OBJECT_DIR = CMakeFiles/project_04.dir

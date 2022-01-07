@@ -128,15 +128,16 @@ void free_map(my_unordered_map map){
     }
 }
 
-/*
-* You might use these for some simple string operations in GPU
-* Put these code into your program
+
+//* You might use these for some simple string operations in GPU
+//* Put these code into your program
 __device__ int d_strlen(const char* string){
     int length = 0;
     while (*string++)
         length++;
     return (length);
 }
+
 //Compares string until nth character
 __device__ int d_strncmp( const char * s1, const char * s2, size_t n )
 {
@@ -155,4 +156,42 @@ __device__ int d_strncmp( const char * s1, const char * s2, size_t n )
         return ( *(unsigned char *)s1 - *(unsigned char *)s2 );
     }
 }
-*/
+
+//__global__ void kernel_fnc(char *dev_ref, StringList *dev_str_list, int *dev_out, int k, int len_ref, int len_read){
+//    printf("ENTER\n");
+//    char *ref_it = dev_ref;
+////    printf("dev_str_list item 0: %s\n", (*dev_str_list).array[0]);
+//    char *read_thread_ptr = (*dev_str_list).array[threadIdx.y] + threadIdx.x;
+//
+//    int l;
+//    for (l = 0; l < len_ref - k + 1; l++){
+//        if (d_strncmp(ref_it, read_thread_ptr, k) == 0){
+//            dev_out[(len_read - k + 1) * threadIdx.y + threadIdx.x] = l;
+//            break;
+//        }
+//
+//        ref_it++;
+//    }
+//
+//    if (l == len_ref - k + 1)
+//        dev_out[(len_read - k + 1) * threadIdx.y + threadIdx.x] = -1;
+//}
+
+__global__ void kernel_fnc(char *dev_ref, char *dev_read, int *dev_out, int k, int len_ref, int len_read){
+    char *ref_it = dev_ref;
+//    printf("dev_str_list item 0: %s\n", (*dev_str_list).array[0]);
+    char *read_thread_ptr = dev_read + threadIdx.x;
+
+    int l;
+    for (l = 0; l < len_ref - k + 1; l++){
+        if (d_strncmp(ref_it, read_thread_ptr, k) == 0){
+            dev_out[threadIdx.x] = l;
+            break;
+        }
+
+        ref_it++;
+    }
+
+    if (l == len_ref - k + 1)
+        dev_out[threadIdx.x] = -1;
+}
