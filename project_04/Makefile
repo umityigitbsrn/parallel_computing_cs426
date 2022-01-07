@@ -1,5 +1,5 @@
 NVCC=nvcc
-CUDAFLAGS= -deviceemu -std=c++14 -I .
+CUDAFLAGS= -std=c++14 -I .
 all: kmer_serial kmer_parallel kmer_parallel_cp
 
 kmer_serial: kmer_serial.cu util.cu util.h
