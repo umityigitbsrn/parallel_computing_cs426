@@ -33,6 +33,8 @@ void freeStringList(StringList *a);
 
 int read_file(char *file_name, StringList *sequences);
 
+void write_file(const char *filename, int *result, int word_count, int word_index_count);
+
 //void substring(char *source, int begin_index, int end_index);
 
 void substring(char *destination, char *source, int begin_index, int end_index);

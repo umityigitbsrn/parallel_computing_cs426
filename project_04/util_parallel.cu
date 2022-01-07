@@ -143,3 +143,18 @@ __global__ void kernel_fnc(char *dev_ref, char *dev_read, int *dev_out, int k, i
             dev_out[index] = -1;
     }
 }
+
+void write_file(const char *filename, int *result, int word_count, int word_index_count){
+    FILE *fp = fopen(filename, "w");
+    if (fp) {
+        for (int i = 0; i < word_count; ++i){
+            fprintf(fp, "[ ");
+            for (int j = 0; j < word_index_count; ++j){
+                fprintf(fp, "%d ", result[i * word_index_count + j]);
+            }
+            fprintf(fp, "]\n");
+        }
+    } else {
+        printf("Could not open the file to write\n");
+    }
+}

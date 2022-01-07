@@ -89,22 +89,45 @@ int main(int argc, char** argv)
     init_hashtable(ref_str_list, &map);
 //    print_map(map);
 
+//    for (int i = 0; i < queries.used; ++i){
+//        printf("source: %s\n", queries.array[i]);
+//        for (int j = k; j <= strlen(queries.array[i]); ++j){
+//            substring(read_str, queries.array[i], j - k, j);
+//            printf("%s", read_str);
+//
+//            if (map.find(read_str) != map.end()){
+//                printf("( count=%d at index ", map[read_str].count);
+//                for (int l = 0; l < map[read_str].count; ++l)
+//                    printf("%d ", map[read_str].index_arr[l]);
+//                printf(")\n");
+//            } else {
+//                printf("( count=0 at index -1 )\n");
+//            }
+//        }
+//    }
+
+    int read_len = strlen(queries.array[0]);
+    int *result = (int *) malloc(sizeof(int) * (read_len - k + 1) * queries.used);
+
     for (int i = 0; i < queries.used; ++i){
-        printf("source: %s\n", queries.array[i]);
-        for (int j = k; j <= strlen(queries.array[i]); ++j){
+//        printf("source: %s\n", queries.array[i]);
+        for (int j = k; j <= read_len; ++j){
             substring(read_str, queries.array[i], j - k, j);
-            printf("%s", read_str);
+//            printf("%s", read_str);
 
             if (map.find(read_str) != map.end()){
-                printf("( count=%d at index ", map[read_str].count);
-                for (int l = 0; l < map[read_str].count; ++l)
-                    printf("%d ", map[read_str].index_arr[l]);
-                printf(")\n");
+//                printf("( count=%d at index ", map[read_str].count);
+//                for (int l = 0; l < map[read_str].count; ++l)
+//                    printf("%d ", map[read_str].index_arr[l]);
+//                printf(")\n");
+                result[i * (read_len - k + 1) + (j - k)] = map[read_str].index_arr[0];
             } else {
-                printf("( count=0 at index -1 )\n");
+                result[i * (read_len - k + 1) + (j - k)] = -1;
             }
         }
     }
+
+    write_file(output_filename, result, queries.used, (read_len - k + 1));
 
     //Free up
     freeStringList(&queries);
@@ -114,5 +137,6 @@ int main(int argc, char** argv)
 
     free(reference_str);
     free(read_str);
+    free(result);
 }
 

@@ -75,9 +75,4 @@ void free_map(my_unordered_map map);
 
 void substring(char *destination, char *source, int begin_index, int end_index);
 
-__device__ int d_strlen(const char* string);
-
-__device__ int d_strncmp( const char * s1, const char * s2, size_t n);
-
-//__global__ void kernel_fnc(char * dev_ref, StringList * dev_str_list, int *dev_out, int k, int len_ref, int len_read);
-__global__ void kernel_fnc(char * dev_ref, char *dev_read, int *dev_out, int k, int len_ref, int len_read);
+void write_file(const char *filename, int *result, int word_count, int word_index_count);

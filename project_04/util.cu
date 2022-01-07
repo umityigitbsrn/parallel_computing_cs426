@@ -157,41 +157,17 @@ __device__ int d_strncmp( const char * s1, const char * s2, size_t n )
     }
 }
 
-//__global__ void kernel_fnc(char *dev_ref, StringList *dev_str_list, int *dev_out, int k, int len_ref, int len_read){
-//    printf("ENTER\n");
-//    char *ref_it = dev_ref;
-////    printf("dev_str_list item 0: %s\n", (*dev_str_list).array[0]);
-//    char *read_thread_ptr = (*dev_str_list).array[threadIdx.y] + threadIdx.x;
-//
-//    int l;
-//    for (l = 0; l < len_ref - k + 1; l++){
-//        if (d_strncmp(ref_it, read_thread_ptr, k) == 0){
-//            dev_out[(len_read - k + 1) * threadIdx.y + threadIdx.x] = l;
-//            break;
-//        }
-//
-//        ref_it++;
-//    }
-//
-//    if (l == len_ref - k + 1)
-//        dev_out[(len_read - k + 1) * threadIdx.y + threadIdx.x] = -1;
-//}
-
-__global__ void kernel_fnc(char *dev_ref, char *dev_read, int *dev_out, int k, int len_ref, int len_read){
-    char *ref_it = dev_ref;
-//    printf("dev_str_list item 0: %s\n", (*dev_str_list).array[0]);
-    char *read_thread_ptr = dev_read + threadIdx.x;
-
-    int l;
-    for (l = 0; l < len_ref - k + 1; l++){
-        if (d_strncmp(ref_it, read_thread_ptr, k) == 0){
-            dev_out[threadIdx.x] = l;
-            break;
+void write_file(const char *filename, int *result, int word_count, int word_index_count){
+    FILE *fp = fopen(filename, "w");
+    if (fp) {
+        for (int i = 0; i < word_count; ++i){
+            fprintf(fp, "[ ");
+            for (int j = 0; j < word_index_count; ++j){
+                fprintf(fp, "%d ", result[i * word_index_count + j]);
+            }
+            fprintf(fp, "]\n");
         }
-
-        ref_it++;
+    } else {
+        printf("Could not open the file to write\n");
     }
-
-    if (l == len_ref - k + 1)
-        dev_out[threadIdx.x] = -1;
 }
