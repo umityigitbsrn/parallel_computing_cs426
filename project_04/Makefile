@@ -9,7 +9,7 @@ kmer_parallel: kmer_parallel.cu util.cu util.h
 	$(NVCC) $(CUDAFLAGS) -g -G -o kmer_parallel kmer_parallel.cu util.cu
 
 kmer_parallel_cp: kmer_parallel_cp.cu util_parallel.cu util_parallel.h
-	$(NVCC) $(CUDAFLAGS) -g -G -o kmer_parallel_cp kmer_parallel_cp.cu util_parallel.cu
+	$(NVCC) $(CUDAFLAGS) -o kmer_parallel_cp kmer_parallel_cp.cu util_parallel.cu
 
 clean:
 	rm -rf kmer_serial kmer_parallel *.o
