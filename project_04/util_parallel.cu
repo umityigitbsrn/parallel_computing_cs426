@@ -120,11 +120,14 @@ __device__ int d_strncmp( const char * s1, const char * s2, size_t n )
 
 __global__ void kernel_fnc(char *dev_ref, char *dev_read, int *dev_out, int k, int len_ref, int len_read, unsigned int num_of_threads) {
     int index = blockIdx.x * 1024 + threadIdx.x;
-
-    if (!(0 <= index && index < num_of_threads)) {
+    int threads_in_word = (len_read - k + 1);
+    int word_id = index / threads_in_word;
+    int word_index = index % threads_in_word;
+    
+    if (0 <= index && index < num_of_threads) {
         char *ref_it = dev_ref;
 //    printf("dev_str_list item 0: %s\n", (*dev_str_list).array[0]);
-        char *read_thread_ptr = dev_read + index;
+        char *read_thread_ptr = dev_read + word_id * len_read + word_index;
 
         int l;
         for (l = 0; l < len_ref - k + 1; l++) {
